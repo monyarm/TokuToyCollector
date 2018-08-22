@@ -1,0 +1,15 @@
+<ActionBar title="Search" class="action-bar"></ActionBar>
+
+<StackLayout>
+        <StackLayout>
+            <TextField [(ngModel)]="searchText"></TextField>
+        </StackLayout>
+            
+        <StackLayout>
+                <ListView [items]="results" class="list-group">
+                    <ng-template let-item=" item" >
+                                <Label (textChange)="update()" [item]="item" (tap)="add($event)" [text]="item.name" class="list-group-item" ></Label>
+                        </ng-template>
+                </ListView>
+        </StackLayout>
+</StackLayout>

@@ -1,0 +1,30 @@
+<ActionBar title="Toku Toy Collector" class="custom-action-bar">
+        <Label text="Toku Toy Collector" class="custom-action-bar-text" ></Label>
+        <ActionItem icon="res://baseline_settings_white_48" [nsRouterLink]="['/settings']" position="right">
+        </ActionItem>
+</ActionBar>
+
+<GridLayout rows="*" columns="*" class="page">
+    <RadListView row=0 col=0 #none *ngIf="groupId == 0" [items]="items" class="list-group">
+        <ng-template let-item="item" >
+                <Label itemId="{{item.id}}" [nsRouterLink]="['/item', item.id]" (longPress)="deleteItem($event)" [text]="item.name" class="list-group-item" ></Label>
+        </ng-template>
+    </RadListView>
+    <RadListView id="groupView" enableCollapsibleGroups="true" row=0 col=0 #grouped *ngIf="groupId > 0" [items]="items" class="list-group" [groupingFunction]="myGroupingFunc">
+        <ng-template tkListItemTemplate let-item="item"  >
+                <Label itemId="{{item.id}}" [nsRouterLink]="['/item', item.id]" (longPress)="deleteItem($event)" [text]="item.name" class="list-group-item" ></Label>
+        </ng-template>
+        <ng-template tkGroupTemplate let-category="category">
+                <Label icon="~/data/{{category}}.png" [text]="category" class="list-group-item h1" ></Label>
+        </ng-template>
+    </RadListView>
+</GridLayout>
+
+<StackLayout class="button-group">
+        <FAB (tap)="tapManual()" id="manualButton" visibility="{{ buttonsHidden ? 'collapsed' : 'visible' }}" icon="res://keyboard" rippleColor="#f1f1f1" class="fab-button font-awesome"></FAB>
+        <FAB (tap)="tapQR()" id="qrButton" visibility="{{ buttonsHidden ? 'collapsed' : 'visible' }}" icon="res://qr" rippleColor="#f1f1f1" class="fab-button font-awesome"></FAB>
+        <FAB (tap)="tapDebug()" id="debugButton" visibility="{{ buttonsHidden ? 'collapsed' : 'visible' }}" icon="res://bug" rippleColor="#f1f1f1" class="fab-button font-awesome"></FAB>
+        <FAB (tap)="tapPlus()" id="plusButton" icon="res://plus_solid" rippleColor="#f1f1f1" class="fab-button font-awesome"></FAB>
+</StackLayout>
+
+
