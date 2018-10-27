@@ -1,14 +1,14 @@
 <ActionBar title="Details" class="action-bar"></ActionBar>
 <ScrollView orientation="vertical" class="page">
         <StackLayout>
-                <GridLayout columns="*1, *9" rows="*, *" >
+                <GridLayout columns="*1, *9" rows="*, *">
                         <Image row=0 col=0 class="center m-l-16" src="~/data/{{item.franchise}}/{{item.series}}.png" width="64"></Image>
-                        <Label row=0 col=1 class="h2 center"  [text]="item.name"></Label>
+                        <Label row=0 col=1 class="h2 center" [text]="item.name"></Label>
                 </GridLayout>
                 <Label class="h4 center" verticalAlignment="center" text="Series: {{item.franchise}} {{item.series}}"></Label>
                 <GridLayout columns="*, *" rows="*,*">
-                        <Image row=0 col=0 [src]="item.productImage"></Image>
-                        <Image row=0 col=1 [src]="item.packagingImage"></Image>
+                        <WebImage #image1 stretch=aspectFit placeholderStretch=aspectFit height=240 row=0 col=0 placeholder="~/data/{{item.franchise}}/{{item.series}}.png" [src]="item.productImage"></WebImage>
+                        <WebImage #image2 stretch=aspectFit placeholderStretch=aspectFit height=240 row=0 col=1 placeholder="~/data/{{item.franchise}}/{{item.series}}.png" [src]="item.packagingImage"></WebImage>
                 </GridLayout>
                 <Label text="Toy Line: {{item.toyQuality}} {{item.toyLine}}"></Label>
                 <Label text="Release Date: {{item.releaseDate || 'Unknown'}}"></Label>

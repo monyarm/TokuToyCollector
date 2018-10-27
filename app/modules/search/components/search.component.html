@@ -2,13 +2,13 @@
 
 <StackLayout>
         <StackLayout>
-            <TextField [(ngModel)]="searchText"></TextField>
+                <SearchBar hint="Search items" (textChange)="onTextChanged($event)"></SearchBar>
         </StackLayout>
-            
+
         <StackLayout>
                 <ListView [items]="results" class="list-group">
-                    <ng-template let-item=" item" >
-                                <Label (textChange)="update()" [item]="item" (tap)="add($event)" [text]="item.name" class="list-group-item" ></Label>
+                        <ng-template let-item=" item">
+                                <Label [item]="item" (tap)="onSubmit($event)" [text]="item.name" class="list-group-item"></Label>
                         </ng-template>
                 </ListView>
         </StackLayout>

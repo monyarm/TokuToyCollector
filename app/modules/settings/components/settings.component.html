@@ -1,13 +1,8 @@
 <ActionBar title="Settings" class="action-bar"></ActionBar>
-<GridLayout rows="auto, auto" columns="auto, auto" backgroundColor="white" >
+<GridLayout rows="auto, auto" columns="auto, *" backgroundColor="white">
     <Label row=0 col=0 text="List Grouping" class="h3 m-l-30 m-t-30"></Label>
-    <DropDown #dd
-              row=0 col=1
-              class="h3 m-r-30 m-l-30 m-b-30 m-t-30"
-              backroundColor="white"
-              [items]="items"
-              [(ngModel)]="selectedIndex"
-              (selectedIndexChanged)="onChangeDropDown($event)"
-              >
+    <DropDown #dd row=0 col=1 class="h3 m-r-30 m-l-30 m-b-30 m-t-30" backroundColor="white" [items]="items" [(ngModel)]="selectedIndex"
+        (selectedIndexChanged)="onChangeDropDown($event)">
     </DropDown>
+    <Button row=1 col=0 colSpan=2 text="Save Settings" (tap)="applySettings()"></Button>
 </GridLayout>

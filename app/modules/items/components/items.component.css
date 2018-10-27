@@ -1,28 +1,27 @@
 .custom-action-bar {
-    background-color: rgb(56, 56, 56);
+  background-color: rgb(56, 56, 56);
 }
 
 .custom-action-bar-text {
-    color: white;
+  color: white;
 }
 
 .image-logo {
-    margin-left: 16;
+  margin-left: 16;
 }
 
 .fab-button {
-    height: 70;
-    width: 70; 
-    margin: 15;
-    background-color: purple; 
-    
+  height: 70;
+  width: 70;
+  margin: 15;
+  background-color: purple;
 }
 
 .button-group {
-    horizontal-align: right; 
-    vertical-align: bottom; 
+  horizontal-align: right;
+  vertical-align: bottom;
 }
 
 .cog {
-    color: white;
+  color: white;
 }

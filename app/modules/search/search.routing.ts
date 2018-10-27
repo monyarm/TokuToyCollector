@@ -3,12 +3,10 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 import { SearchComponent } from "~/modules/search/components/search.component";
 
-const routes: Routes = [
-    { path: "", component: SearchComponent },
-];
+const routes: Routes = [{ path: "", component: SearchComponent }];
 
 @NgModule({
-    imports: [NativeScriptRouterModule.forChild(routes)],
-    exports: [NativeScriptRouterModule]
+  imports: [NativeScriptRouterModule.forChild(routes)],
+  exports: [NativeScriptRouterModule]
 })
-export class SearchRoutingModule { }
+export class SearchRoutingModule {}

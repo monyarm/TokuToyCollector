@@ -3,12 +3,10 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 import { SettingsComponent } from "~/modules/settings/components/settings.component";
 
-const routes: Routes = [
-    { path: "", component: SettingsComponent },
-];
+const routes: Routes = [{ path: "", component: SettingsComponent }];
 
 @NgModule({
-    imports: [NativeScriptRouterModule.forChild(routes)],
-    exports: [NativeScriptRouterModule]
+  imports: [NativeScriptRouterModule.forChild(routes)],
+  exports: [NativeScriptRouterModule]
 })
-export class SettingsRoutingModule { }
+export class SettingsRoutingModule {}
