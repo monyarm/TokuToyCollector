@@ -8,7 +8,7 @@ import { ItemsRoutingModule } from "~/modules/items/items.routing";
 import { CommonModule } from "@angular/common";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
-registerElement("Fab", () => require("nativescript-floatingactionbutton").Fab);
+registerElement("Fab", () => require("@nstudio/nativescript-floatingactionbutton").Fab);
 
 @NgModule({
   imports: [

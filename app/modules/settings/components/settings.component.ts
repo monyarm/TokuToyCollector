@@ -2,12 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { SelectedIndexChangedEventData } from "nativescript-drop-down";
 import * as appSettings from "tns-core-modules/application-settings/application-settings";
 import { RouterExtensions } from "nativescript-angular";
-import * as application from "application";
+import * as application from "tns-core-modules/application";
 import {
   AndroidApplication,
   AndroidActivityBackPressedEventData
 } from "application";
-import { isAndroid } from "platform";
+import { isAndroid } from "tns-core-modules/platform";
 
 @Component({
   selector: "my-modal",

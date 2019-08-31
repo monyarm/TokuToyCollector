@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Inventory } from "~/item/items";
 import { Item } from "~/item/item";
 import { RouterExtensions } from "nativescript-angular/router";
-import { SearchBar } from "ui/search-bar";
+import { SearchBar } from "tns-core-modules/ui/search-bar";
 
 const Data: Item[] = require("~/data/data.json");
 

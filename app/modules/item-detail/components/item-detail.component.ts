@@ -15,9 +15,9 @@ const inventory = new Inventory();
 })
 export class ItemDetailComponent implements OnInit {
   item: Item;
-  @ViewChild("image1")
+  @ViewChild("image1", {static: false})
   image1: ElementRef;
-  @ViewChild("image2")
+  @ViewChild("image2", {static: false})
   image2: ElementRef;
 
   constructor(private route: ActivatedRoute) {
